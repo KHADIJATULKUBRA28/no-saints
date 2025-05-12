@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wearenosaints</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&family=Was+Don+Chedi&display=swap" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+  <header>
+    <div class="menu-container" onclick="toggleSidebar()">
+      <img src="logo1.jpg" id="menuLogo" class="menu-logo" alt="Menu Logo" />
+    </div>
+  
+    <div class="logo"><a href="index.html">NO SAINTS</a></div>
+  
+    <div class="icon-group">
+      <div class="search-wrapper">
+        <input type="text" id="searchInput" placeholder="Search..." />
+        <i class="fas fa-search" onclick="toggleSearch()"></i>
+      </div>
+      <i class="fas fa-heart"></i>
+      <i class="fas fa-shopping-cart"></i>
+    </div>
+  </header>
+
+  <div class="sidebar" id="sidebar">
+    <ul>
+      <li><a href="new-in.html">New In</a></li>
+      <li>
+        <a href="javascript:void(0);" onclick="toggleDropdown('menDropdown')">Men</a>
+        <ul class="submenu" id="menDropdown">
+          <li><a href="mens-tops.html">Tops</a></li>
+          <li><a href="mens-bottoms.html">Bottoms</a></li>
+          <li><a href="mens-accessories.html">Accessories</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="javascript:void(0);" onclick="toggleDropdown('womenDropdown')">Women</a>
+        <ul class="submenu" id="womenDropdown">
+          <li><a href="womens-tops.html">Tops</a></li>
+          <li><a href="womens-bottoms.html">Bottoms</a></li>
+          <li><a href="womens-accessories.html">Accessories</a></li>
+        </ul>
+      </li>
+      <li><a href="collections.html">Collections</a></li>
+    </ul>
+  </div>
+  
+
+<section class="hero">
+  <h1>Coming Soon.</h1>
+</section>
+
+<div id="newsletterModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn" onclick="closeModal()">X</span>
+    <h2>No Saints.</h2>
+    <p>Sign up to stay connected through updates on new arrivals, news and launches.</p>
+    <form id="newsletterForm">
+      <input type="email" id="email" name="email" placeholder="Enter your email" required />
+      <button type="submit">Subscribe</button>
+    </form>
+  </div>
+</div>
+
+
+<footer>
+  &copy; 2025 nosaints |
+  <a href="mailto:nosaintsofficial@gmail.com">nosaints@gmail.com</a>
+  <div class="social-icons">
+    <a href="https://instagram.com/nosaintsofficial" target="_blank"><i class="fab fa-instagram"></i></a>
+  </div>
+  <a href="#" onclick="document.getElementById('newsletterModal').style.display='flex'; return false;">Join our Newsletter</a>
+</footer>
+
+<script>
+  function openModal() {
+    document.getElementById('newsletterModal').style.display = 'flex';
+  }
+
+  function closeModal() {
+    document.getElementById('newsletterModal').style.display = 'none';
+  }
+
+  // Handle newsletter form submission
+  document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('newsletterForm');
+    if (form) {
+      form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        const email = document.getElementById('email').value;
+        console.log('Email submitted: ', email);
+        closeModal();
+      });
+    }
+
+    // Add click event to sidebar links to show popup after delay
+    const sidebarLinks = document.querySelectorAll('.sidebar a');
+    sidebarLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        setTimeout(() => {
+          openModal();
+        }, 2000); // show modal 2 seconds after link is clicked
+      });
+    });
+  });
+
+  // Optional: Close popup if clicking outside modal content
+  window.onclick = function (event) {
+    const modal = document.getElementById('newsletterModal');
+    if (event.target == modal) {
+      modal.style.display = 'none';
+    }
+  };
+
+  // Sidebar toggle
+  function toggleSidebar() {
+    const sidebar = document.getElementById('sidebar');
+    const menuLogo = document.getElementById('menuLogo');
+    sidebar.classList.toggle('show');
+    menuLogo.classList.toggle('rotated');
+  }
+
+  // Search bar toggle
+  function toggleSearch() {
+    const input = document.getElementById('searchInput');
+    input.classList.toggle('active');
+    if (input.classList.contains('active')) {
+      input.focus();
+    }
+  }
+
+  // Dropdown toggle
+  function toggleDropdown(id) {
+    const dropdown = document.getElementById(id);
+    dropdown.style.display = (dropdown.style.display === 'block') ? 'none' : 'block';
+  }
+</script>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>New In - NO SAINTS</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&family=Was+Don+Chedi&display=swap" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+  <header>
+    <div class="menu-container" onclick="toggleSidebar()">
+      <img src="logo1.jpg" id="menuLogo" class="menu-logo" alt="Menu Logo" />
+    </div>
+  
+    <div class="logo"><a href="index.html">NO SAINTS</a></div>
+  
+    <div class="icon-group">
+      <div class="search-wrapper">
+        <input type="text" id="searchInput" placeholder="Search..." />
+        <i class="fas fa-search" onclick="toggleSearch()"></i>
+      </div>
+      <i class="fas fa-heart"></i>
+      <i class="fas fa-shopping-cart"></i>
+    </div>
+  </header>
+
+  <div class="sidebar" id="sidebar">
+    <ul>
+      <li><a href="new-in.html">New In</a></li>
+      <li>
+        <a href="javascript:void(0);" onclick="toggleDropdown('menDropdown')">Men</a>
+        <ul class="submenu" id="menDropdown">
+          <li><a href="mens-tops.html">Tops</a></li>
+          <li><a href="mens-bottoms.html">Bottoms</a></li>
+          <li><a href="mens-accessories.html">Accessories</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="javascript:void(0);" onclick="toggleDropdown('womenDropdown')">Women</a>
+        <ul class="submenu" id="womenDropdown">
+          <li><a href="womens-tops.html">Tops</a></li>
+          <li><a href="womens-bottoms.html">Bottoms</a></li>
+          <li><a href="womens-accessories.html">Accessories</a></li>
+        </ul>
+      </li>
+      <li><a href="collections.html">Collections</a></li>
+    </ul>
+  </div>
+  
+  <h2>New In</h2>
+
+<section class="product-grid">
+
+  <div class="product-box">
+    <img src="1.jpeg" alt="Product 1" />
+    <div class="product-details">
+      <p class="product-name">Product 1</p>
+      <p class="product-price">₹ 1,499</p>
+      <i class="fas fa-heart wishlist-icon" onclick="toggleWishlist(this)"></i>
+    </div>
+  </div>
+
+  <div class="product-box">
+    <img src="2.jpeg" alt="Product 2" />
+    <div class="product-details">
+      <p class="product-name">Product 2</p>
+      <p class="product-price">₹ 1,499</p>
+      <i class="fas fa-heart wishlist-icon" onclick="toggleWishlist(this)"></i>
+    </div>
+  </div>
+
+  <div class="product-box">
+    <img src="3.jpeg" alt="Product 3" />
+    <div class="product-details">
+      <p class="product-name">Product 3</p>
+      <p class="product-price">₹ 1,499</p>
+      <i class="fas fa-heart wishlist-icon" onclick="toggleWishlist(this)"></i>
+    </div>
+  </div>
+
+  <div class="product-box">
+    <img src="4.jpeg" alt="Product 4" />
+    <div class="product-details">
+      <p class="product-name">Product 4</p>
+      <p class="product-price">₹ 1,499</p>
+      <i class="fas fa-heart wishlist-icon" onclick="toggleWishlist(this)"></i>
+    </div>
+  </div>
+
+  <div class="product-box">
+    <img src="5.jpeg" alt="Product 5" />
+    <div class="product-details">
+      <p class="product-name">Product 5</p>
+      <p class="product-price">₹ 1,499</p>
+      <i class="fas fa-heart wishlist-icon" onclick="toggleWishlist(this)"></i>
+    </div>
+  </div>
+
+  <div class="product-box">
+    <img src="6.jpeg" alt="Product 6" />
+    <div class="product-details">
+      <p class="product-name">Product 6</p>
+      <p class="product-price">₹ 1,499</p>
+      <i class="fas fa-heart wishlist-icon" onclick="toggleWishlist(this)"></i>
+    </div>
+  </div>
+
+</section>
+
+  <footer>
+    &copy; 2025 nosaints |
+    <a href="mailto:nosaintsofficial@gmail.com">nosaintsofficial@gmail.com</a>
+    <div class="social-icons">
+      <a href="https://instagram.com/nosaintsofficial" target="_blank"><i class="fab fa-instagram"></i></a>
+    </div>
+  </footer>
+
+  <script>
+    function toggleSidebar() {
+      const sidebar = document.getElementById('sidebar');
+      const menuLogo = document.getElementById('menuLogo');
+  
+      sidebar.classList.toggle('show');
+  
+   
+      if (sidebar.classList.contains('show')) {
+        menuLogo.classList.add('rotated');
+      } else {
+        menuLogo.classList.remove('rotated');
+      }
+    }
+  
+    function toggleSearch() {
+      const input = document.getElementById('searchInput');
+      input.classList.toggle('active');
+      if (input.classList.contains('active')) {
+        input.focus();
+      }
+    }
+  
+    function toggleDropdown(id) {
+      const dropdown = document.getElementById(id);
+      dropdown.style.display = (dropdown.style.display === 'block') ? 'none' : 'block';
+    }
+
+    function toggleWishlist(icon) {
+      icon.classList.toggle('active');
+}
+
+  </script>
+  
+</body>
+</html>
