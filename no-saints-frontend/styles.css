@@ -364,8 +364,8 @@ h2 {
 
 .close-btn:hover {
   color: black;
-}/* Full header container */
-/* Header base */
+}
+
 .header {
   position: relative;
   display: flex;
@@ -376,24 +376,23 @@ h2 {
   z-index: 10;
 }
 
-/* Menu logo container */
+/* Menu logo */
 .menu-container {
   z-index: 2;
 }
 
-/* Menu image */
 .menu-logo {
-  width: 30px;
+  width: 32px;
   height: auto;
   cursor: pointer;
 }
 
-/* Center logo - stays centered no matter what */
+/* Center NO SAINTS logo */
 .logo {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 32px;
+  font-size: 36px;
   font-weight: bold;
   white-space: nowrap;
   z-index: 1;
@@ -404,31 +403,40 @@ h2 {
   color: black;
 }
 
-/* Right icons */
+/* Right-side icons */
 .right-icons {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
   z-index: 2;
 }
 
 .right-icons a {
   text-decoration: none;
   color: black;
-  font-size: 22px;
+  font-size: 24px;
 }
 
 /* Mobile responsiveness */
 @media (max-width: 768px) {
+  .header {
+    padding: 10px 16px;
+  }
+
   .menu-logo {
-    width: 20px;
+    width: 22px;
   }
 
   .logo {
     font-size: 20px;
   }
 
+  .right-icons {
+    gap: 10px;
+  }
+
   .right-icons a {
     font-size: 18px;
   }
 }
+
