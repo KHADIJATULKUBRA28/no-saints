@@ -10,23 +10,25 @@
 </head>
 
 <body>
+<header class="header">
 
-  <header>
+  <div class="left-group">
     <div class="menu-container" onclick="toggleSidebar()">
       <img src="logo1.jpg" id="menuLogo" class="menu-logo" alt="Menu Logo" />
     </div>
-  
-    <div class="logo"><a href="index.html">NO SAINTS</a></div>
-  
-    <div class="icon-group">
-      <div class="search-wrapper">
-        <input type="text" id="searchInput" placeholder="Search..." />
-        <i class="fas fa-search" onclick="toggleSearch()"></i>
-      </div>
-      <i class="fas fa-heart"></i>
-      <i class="fas fa-shopping-cart"></i>
-    </div>
-  </header>
+  </div>
+
+
+  <div class="logo"><a href="index.html">NO SAINTS</a></div>
+
+  <div class="right-icons">
+    <a href="search.html" class="search-link">
+        <i class="fas fa-search"></i>
+      </a>
+      <a href="wishlist.html"><i class="fas fa-heart"></i></a>
+    <a href="cart.html"><i class="fas fa-shopping-cart"></i></a>
+  </div>
+</header>
 
   <div class="sidebar" id="sidebar">
     <ul>

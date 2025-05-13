@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Search | NO SAINTS</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+      background-color: #fff;
+    }
+
+    .search-page {
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      padding: 20px;
+    }
+
+    .search-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .search-header .back-button {
+      font-size: 28px;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .search-box {
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    .search-box input {
+      width: 90%;
+      max-width: 400px;
+      font-size: 18px;
+      padding: 12px;
+      border: 1px solid #000;
+      outline: none;
+    }
+
+    .suggestions {
+      margin-top: 30px;
+      padding: 0 20px;
+    }
+
+    .suggestions h3 {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .suggestion-item {
+      padding: 8px 0;
+      border-bottom: 1px solid #eee;
+      cursor: pointer;
+    }
+
+    .suggestion-item:hover {
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <div class="search-page">
+    <div class="search-header">
+      <button class="back-button" onclick="history.back()">✕</button>
+      <span style="font-size: 16px;">Search</span>
+      <div></div>
+    </div>
+
+    <div class="search-box">
+      <input type="text" placeholder="Search for products..." id="searchInput"/>
+    </div>
+
+    <div class="suggestions">
+      <h3>Suggestions</h3>
+      <div class="suggestion-item">Black T-shirt</div>
+      <div class="suggestion-item">Oversize Hoodie</div>
+      <div class="suggestion-item">Cargo Pants</div>
+      <div class="suggestion-item">Accessories</div>
+      <div class="suggestion-item">Spring 2025 Drop</div>
+    </div>
+  </div>
+</body>
+</html>
